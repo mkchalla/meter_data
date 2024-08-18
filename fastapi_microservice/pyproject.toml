@@ -1,0 +1,18 @@
+[project]
+name = "fastapi_microservice"
+version = "0.1.0"
+description = "Microservice to load Meter data into cassandra DB"
+authors = [
+    {name = "madan", email = "mchalla.dev@live.com"},
+]
+dependencies = [
+    "fastapi>=0.112.1",
+    "uvicorn>=0.30.6",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
