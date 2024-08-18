@@ -1,0 +1,26 @@
+services:
+
+  postgres_db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=hello_django
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=hello_django_dev
+
+  cassandra_db:
+    image: cassandra:latest
+    ports:
+      - 7000:7000
+#    environment:
+#      - CASSANDRA_LISTEN_ADDRESS=
+#      - CASSANDRA_BROADCAST_ADDRESS=
+    volumes:
+      - cassandra_data:/var/lib/cassandra/data
+
+volumes:
+  postgres_data:
+  cassandra_data:
