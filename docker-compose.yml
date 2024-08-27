@@ -15,11 +15,16 @@ services:
     image: cassandra:latest
     ports:
       - 7000:7000
-#    environment:
-#      - CASSANDRA_LISTEN_ADDRESS=
-#      - CASSANDRA_BROADCAST_ADDRESS=
+      - 9042:9042
     volumes:
       - cassandra_data:/var/lib/cassandra/data
+
+  fastapi_microservice:
+    build: ./fastapi_microservice
+    ports:
+      - 8000:8000
+
+
 
 volumes:
   postgres_data:
